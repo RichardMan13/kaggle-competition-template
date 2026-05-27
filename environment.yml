@@ -4,7 +4,7 @@
 name: cookiecutter-kaggle
 channels:
   - pytorch
-  - anaconda
+  - nvidia
   - conda-forge
   - defaults
 dependencies:
@@ -18,15 +18,13 @@ dependencies:
   - seaborn
   - plotly
   - missingno
-  - pandas-profiling
+  - ydata-profiling
   - optuna
   - joblib
   - tqdm
   - python-dotenv
   - invoke
   - path.py
-  - jupyter
-  - jupyterlab
   - nbdime
   - ipykernel
   - pytorch
@@ -34,19 +32,17 @@ dependencies:
   - torchaudio
   - pytorch-cuda=12.1 # Versao estavel e recomendada para a GPU GTX 1650 (compativel com driver 12.8)
   # - cpuonly # Use esta linha se for rodar apenas em CPU (removendo pytorch-cuda)
+  - lightgbm
+  - xgboost
+  - catboost
+  - h2o
+  - pyspark
+  - ruff
+  - kaggle
+  - mlflow
+  # Descomente abaixo se for utilizar LLMs e desenvolvimento de Agentes:
+  # - langchain
+  # - langchain-openai
+  # - langgraph
+  # - openai
   - pip
-  - pip:
-      - black
-      - pylint
-      - lightgbm
-      - xgboost
-      - catboost
-      - h2o
-      - pyspark
-      - kaggle
-      - mlflow
-      # Descomente abaixo se for utilizar LLMs e desenvolvimento de Agentes:
-      # - langchain
-      # - langchain-openai
-      # - langgraph
-      # - openai

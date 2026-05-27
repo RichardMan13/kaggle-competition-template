@@ -71,11 +71,15 @@ Em vez de usar `Makefile`, este template utiliza a biblioteca **Invoke** escrita
   ```bash
   inv clean
   ```
-* **Formatar código com Black**:
+* **Formatar código com Ruff**:
   ```bash
   inv format
   ```
-* **Executar linter (Pylint)**:
+* **Executar linter (Ruff check)**:
   ```bash
   inv lint
+  ```
+* **Executar todas as verificações consecutivamente (Formatação + Lint)**:
+  ```bash
+  inv check
   ```

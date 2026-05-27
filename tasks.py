@@ -33,15 +33,20 @@ def clean(c):
 
 @task
 def format(c):
-    """Formata o código-fonte nas pastas src/ e notebooks/ utilizando o Black."""
-    print("Formatando código com Black...")
-    c.run("black src/ notebooks/ tasks.py", warn=True)
+    """Formata o código-fonte nas pastas src/ e notebooks/ utilizando o Ruff."""
+    print("Formatando código com Ruff...")
+    c.run("ruff format src/ notebooks/ tasks.py", warn=True)
 
 @task
 def lint(c):
-    """Executa a verificação estática de código com o Pylint."""
-    print("Executando análise estática com Pylint...")
-    c.run("pylint src/ tasks.py", warn=True)
+    """Executa a verificação estática de código com o Ruff."""
+    print("Executando análise estática com Ruff...")
+    c.run("ruff check src/ notebooks/ tasks.py", warn=True)
+
+@task(pre=[format, lint])
+def check(c):
+    """Executa a formatação e a verificação estática consecutivamente com o Ruff."""
+    print("Verificação completa com Ruff concluída com sucesso!")
 
 @task
 def download_data(c, competition):
