@@ -1,7 +1,10 @@
 # ==========================================
 # Kaggle & Data Science Rules
 # ==========================================
-data/
+# Ignorar dados nas pastas de dados, mas rastrear a estrutura de diretórios via .gitkeep
+data/**
+!data/**/
+!data/**/*.gitkeep
 submissions/*.csv
 artifacts/
 
